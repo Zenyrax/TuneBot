@@ -7,6 +7,8 @@ import (
 	"os"
 )
 
+// There was auto-updating stuff in here, but I removed it for now
+
 func SetVersion() string {
 	ex, err := os.Executable()
 	if err != nil {
