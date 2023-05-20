@@ -8,6 +8,7 @@ import (
 	"net/http/cookiejar"
 )
 
+// Create req client and get proxy if needed
 func Init(task *Task) {
 	jar, err := cookiejar.New(nil)
 	if err != nil {

@@ -25,7 +25,7 @@ TuneBot is a simple application for automatically purchasing items from stores r
     * Make sure to test it first!
     * Instructions for making a Discord webhook: https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks
 5. Make tasks for the product you want to bot using the instructions below
-6. If you want to run many tasks, I suggest using proxies, but I don't think they rate-limit.
+6. If you want to run many tasks, I suggest using proxies, but I don't think they rate-limit
 7. Select the "Run Tasks" options and selection the task and proxy list you want to use
     * If you don't want to use any proxies, choose a blank proxy list
 8. Let it run!
@@ -38,7 +38,7 @@ TuneBot is a simple application for automatically purchasing items from stores r
     * I like to manage CSV files with Ron's Editor
 - Store
   - This is the URL of the website (Ex. vintagevinyl.com)
-  - Be careful not to add an unncessary "www"
+  - Be careful not to add an unnecessary "www"
 - UPC
   - This is the UPC of the product and can be found at the end of a product link (ex. 093624869559)
   - For example, for the link https://waterloorecords.com/UPC/602445401284, the UPC would be 602445401284

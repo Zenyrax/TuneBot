@@ -8,7 +8,7 @@ import (
 	"net/http"
 )
 
-// Getting session cookies
+// Getting session cookie
 func CreateSession(task *Task) {
 	plog.TaskStatus(task.Count, "yellow", "INFO", "Initializing session...")
 	req, err := http.NewRequest("GET", fmt.Sprintf("https://%s/SecureUser.json?_=%d", task.Site, time.Now().UTC().UnixNano()/1e6), nil)

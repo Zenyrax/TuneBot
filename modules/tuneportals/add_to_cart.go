@@ -13,7 +13,7 @@ import (
 	"net/http/cookiejar"
 )
 
-// Loading product info
+// Add product to cart and keep trying if OOS
 func AddToCart(task *Task) {
 	plog.TaskStatus(task.Count, "yellow", "INFO", "Adding to cart...")
 
