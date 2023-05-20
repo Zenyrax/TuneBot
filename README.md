@@ -22,20 +22,20 @@ TuneBot is a simple application for automatically purchasing items from stores r
 2. Download the latest exe
 3. Run it
 4. To keep track of checkouts, you can go to "Manage Settings" and add a Discord webhook
-  * Make sure to test it first!
-  * Instructions for making a Discord webhook: https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks
+    * Make sure to test it first!
+    * Instructions for making a Discord webhook: https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks
 5. Make tasks for the product you want to bot using the instructions below
 6. If you want to run many tasks, I suggest using proxies, but I don't think they rate-limit.
 7. Select the "Run Tasks" options and selection the task and proxy list you want to use
-  * If you don't want to use any proxies, choose a blank proxy list
+    * If you don't want to use any proxies, choose a blank proxy list
 8. Let it run!
-  * If the item you want is out of stock, it'll keep trying to add to cart until it comes back in stock
+    * If the item you want is out of stock, it'll keep trying to add to cart until it comes back in stock
 
 ## Setting up tasks
 1. Run the exe
 2. Select "Manage Tasks"
 3. Open the "tasks.csv" file or make a copy of "tasks.csv" and open that
-  * I like to manage CSV files with Ron's Editor
+    * I like to manage CSV files with Ron's Editor
 - Store
   - This is the URL of the website (Ex. vintagevinyl.com)
   - Be careful not to add an unncessary "www"
