@@ -349,6 +349,18 @@ type stripeResponse struct {
 	Used     bool   `json:"used"`
 }
 
+type stripeError struct {
+	Error struct {
+		Code          string `json:"code"`
+		DeclineCode   string `json:"decline_code"`
+		DocURL        string `json:"doc_url"`
+		Message       string `json:"message"`
+		Param         string `json:"param"`
+		RequestLogURL string `json:"request_log_url"`
+		Type          string `json:"type"`
+	} `json:"error"`
+}
+
 type orderResponse struct {
 	ForceCartRefresh int         `json:"force_cart_refresh"`
 	Errors           []string    `json:"errors"`

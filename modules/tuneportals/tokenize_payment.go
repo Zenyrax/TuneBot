@@ -70,7 +70,15 @@ func TokenizePayment(task *Task) {
 		plog.TaskStatus(task.Count, "red", "ERROR", fmt.Sprintf("Server error while creating payment token (%d)", res.StatusCode))
 		<-time.After(3 * time.Second)
 	} else {
-		plog.TaskStatus(task.Count, "red", "ERROR", fmt.Sprintf("Request error while creating payment token (%d)", res.StatusCode))
+		body, err := io.ReadAll(res.Body)
+		if err != nil {
+			plog.TaskStatus(task.Count, "red", "ERROR", "Failure parsing error while creating payment token")
+			<-time.After(3 * time.Second)
+			return
+		}
+		var response stripeError
+		json.Unmarshal(body, &response)
+		plog.TaskStatus(task.Count, "red", "ERROR", fmt.Sprintf("Request error while creating payment token [%s] (%d)", response.Error.Message, res.StatusCode))
 		<-time.After(3 * time.Second)
 	}
 }
