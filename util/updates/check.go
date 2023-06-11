@@ -13,11 +13,12 @@ import (
 	"runtime"
 	"time"
 
+	"github.com/AlecAivazis/survey/v2"
 	"github.com/inconshreveable/go-update"
 )
 
-// Keeping this flexible so I can maybe make a standalone package for it
-func Check(owner, repo, version string) {
+// Keeping this flexible so I can make it worthy of standalone package
+func Check(owner, repo, version string, mandatory bool) {
 	res, err := http.DefaultClient.Get(fmt.Sprintf("https://api.github.com/repos/%s/%s/releases", owner, repo))
 	if err != nil {
 		return
@@ -36,7 +37,18 @@ func Check(owner, repo, version string) {
 		}
 
 		if releases[0].Name != version {
-			log.Printf("A new version of %s is out (%s -> %s)\n", repo, version, releases[0].Name)
+			if mandatory {
+				log.Printf("A new version of %s is out (%s -> %s)\n", repo, version, releases[0].Name)
+			} else {
+				wantUpdate := false
+				prompt := &survey.Confirm{
+					Message: fmt.Sprintf("A new version of %s is out (%s -> %s), would you like to update?", repo, version, releases[0].Name),
+				}
+				survey.AskOne(prompt, &wantUpdate)
+				if !wantUpdate {
+					return
+				}
+			}
 			if len(releases[0].Assets) == 0 {
 				log.Println("No assets found")
 				return
