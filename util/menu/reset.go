@@ -33,7 +33,7 @@ func Reset() {
 
 	if appdata.CurrentConfig.Version != "" {
 		c = color.RGB(190, 103, 153)
-		c.Println(fmt.Sprintf(" Version %s\n", appdata.CurrentConfig.Version))
+		c.Println(fmt.Sprintf(" %s\n", appdata.CurrentConfig.Version))
 	} else {
 		fmt.Println("\n")
 	}

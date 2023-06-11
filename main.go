@@ -7,7 +7,9 @@ import (
 )
 
 func main() {
-	appdata.Init()
-	appdata.CurrentConfig.Version = updates.SetVersion()
+	version := "v1.0.2"
+
+	updates.Check("zenyrax", "TuneBot", version)
+	appdata.Init(version)
 	menu.Start()
 }

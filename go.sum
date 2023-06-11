@@ -1,3 +1,5 @@
+bitbucket.org/kardianos/osext v0.0.0-20181027061946-15c52d0993e9 h1:e4OTPTo8CRlaXb79fvCXZIHLLOgAf4r360j6NspbhRk=
+bitbucket.org/kardianos/osext v0.0.0-20181027061946-15c52d0993e9/go.mod h1:gCJCsH2RZ6GzBARZLbHxrfO81GvxS0XbMqlnU8aSli0=
 github.com/AlecAivazis/survey/v2 v2.3.2 h1:TqTB+aDDCLYhf9/bD2TwSO8u8jDSmMUd2SUVO4gCnU8=
 github.com/AlecAivazis/survey/v2 v2.3.2/go.mod h1:TH2kPCDU3Kqq7pLbnCWwZXDBjnhZtmsCle5EiYDJ2fg=
 github.com/Netflix/go-expect v0.0.0-20180615182759-c93bf25de8e8 h1:xzYJEypr/85nBpB11F9br+3HUrpgb+fcm5iADzXXYEw=

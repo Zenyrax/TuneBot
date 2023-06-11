@@ -10,7 +10,7 @@ import (
 	"github.com/kirsle/configdir"
 )
 
-func Init() bool {
+func Init(version string) bool {
 	first := false
 	// Sets appdata path
 	configPath := configdir.LocalConfig("TuneBot")
@@ -105,6 +105,8 @@ func Init() bool {
 			os.Exit(1)
 		}
 	}
+
+	CurrentConfig.Version = version
 
 	return first
 }

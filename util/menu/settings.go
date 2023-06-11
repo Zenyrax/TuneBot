@@ -24,7 +24,7 @@ func Settings() {
 	case strings.Contains(option, "Set webhook"):
 		webhook := ""
 		prompt := &survey.Input{
-			Message: "What's your webhook URL?",
+			Message: "What's your webhook URL? (If you can't paste, right-click the window)",
 		}
 		survey.AskOne(prompt, &webhook)
 
