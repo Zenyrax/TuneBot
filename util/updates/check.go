@@ -36,13 +36,13 @@ func Check(owner, repo, version string, mandatory bool) {
 			return
 		}
 
-		if releases[0].Name != version {
+		if releases[0].TagName != version {
 			if mandatory {
-				log.Printf("A new version of %s is out (%s -> %s)\n", repo, version, releases[0].Name)
+				log.Printf("A new version of %s is out (%s -> %s)\n", repo, version, releases[0].TagName)
 			} else {
 				wantUpdate := false
 				prompt := &survey.Confirm{
-					Message: fmt.Sprintf("A new version of %s is out (%s -> %s), would you like to update?", repo, version, releases[0].Name),
+					Message: fmt.Sprintf("A new version of %s is out (%s -> %s), would you like to update?", repo, version, releases[0].TagName),
 				}
 				survey.AskOne(prompt, &wantUpdate)
 				if !wantUpdate {
