@@ -25,6 +25,10 @@ func Init(task *Task) {
 
 	// fmt.Println(proxy, httpProxy)
 
+	// Makes it easier to change the UA in the future if I just define it here
+	task.userAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36"
+	task.secUa = `"Not.A/Brand";v="8", "Chromium";v="114", "Google Chrome";v="114"`
+
 	task.client = &http.Client{
 		Jar: jar,
 		Transport: &http.Transport{

@@ -27,11 +27,11 @@ func TokenizePayment(task *Task) {
 	req.Header = http.Header{
 		"cache-control":             {`max-age=0`},
 		"content-type":              {`application/x-www-form-urlencoded`},
-		"sec-ch-ua":                 {`"Google Chrome";v="113", "Chromium";v="113", "Not-A.Brand";v="24"`},
+		"sec-ch-ua":                 {task.secUa},
 		"sec-ch-ua-mobile":          {`?0`},
 		"sec-ch-ua-platform":        {`"Windows"`},
 		"upgrade-insecure-requests": {"1"},
-		"user-agent":                {"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36"},
+		"user-agent":                {task.userAgent},
 		"accept":                    {"application/json"},
 		"sec-fetch-site":            {`none`},
 		"sec-fetch-mode":            {`cors`},

@@ -49,7 +49,9 @@ type Task struct {
 	paymentToken     string
 	sessionTimestamp int64
 
-	client *http.Client
+	client    *http.Client
+	userAgent string
+	secUa     string
 }
 
 const (

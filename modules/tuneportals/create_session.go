@@ -22,11 +22,11 @@ func CreateSession(task *Task) {
 	// I don't actually know if they care about headers that much, just wanna keep everything as accurate as possible in case they do
 	req.Header = http.Header{
 		"cache-control":             {`max-age=0`},
-		"sec-ch-ua":                 {`"Google Chrome";v="113", "Chromium";v="113", "Not-A.Brand";v="24"`},
+		"sec-ch-ua":                 {task.secUa},
 		"sec-ch-ua-mobile":          {`?0`},
 		"sec-ch-ua-platform":        {`"Windows"`},
 		"upgrade-insecure-requests": {"1"},
-		"user-agent":                {"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36"},
+		"user-agent":                {task.userAgent},
 		"accept":                    {"text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"},
 		"sec-fetch-site":            {`none`},
 		"sec-fetch-mode":            {`navigate`},
