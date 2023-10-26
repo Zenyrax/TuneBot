@@ -64,7 +64,7 @@ func LoadShipping(task *Task) {
 			for i := 0; i < len(response.ShippingOptions); i++ {
 				if strings.TrimSpace(task.ShippingOption) == strings.TrimSpace(response.ShippingOptions[i].DeliveryType) {
 					task.ShippingOption = fmt.Sprint(response.ShippingOptions[i].ID)
-					fmt.Println(response.ShippingOptions[i], task.ShippingOption)
+					// fmt.Println(response.ShippingOptions[i], task.ShippingOption)
 					plog.TaskStatus(task.Count, "blue", "INFO", fmt.Sprintf("Successfully loaded shipping data (Using %s)", task.ShippingOption))
 					task.Stage = TOKENIZE_PAYMENT
 					return
